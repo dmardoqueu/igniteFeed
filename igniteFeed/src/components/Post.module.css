@@ -1,20 +1,16 @@
-/* Post.module.css */
-
-/* Estilo comum */
 .post {
     border-radius: 8px;
     padding: 2.5rem;
-    background: var(--gray-800); /* Cor do tema escuro */
+    background: var(--gray-800);
 }
 
-/* Estilo para tema claro */
 .post.light {
-    background: var(--gray-300); /* Cor do fundo no tema claro */
+    background: var(--gray-300); 
     color: var(--gray-900);
 }
 
 .post.light .authorInfo strong {
-    color: var(--gray-700); /* Ou qualquer outra cor que você queira usar no tema claro */
+    color: var(--gray-700);
 }
 
 .post.light .commentForm > strong {

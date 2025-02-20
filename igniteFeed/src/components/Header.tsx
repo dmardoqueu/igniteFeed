@@ -1,9 +1,9 @@
-import { useTheme } from '../components/ThemeContext'; // Importando o contexto de tema
+import { useTheme } from '../components/ThemeContext';
 import styles from './Header.module.css';
 import igniteLogo from '../assets/ignite-logo.svg';
 
 export function Header() {
-    const { theme, toggleTheme } = useTheme(); // Pegando o tema e a função para alternar o tema
+    const { theme, toggleTheme } = useTheme();
 
     const headerTheme = theme === 'dark' ? styles.headerDark : styles.headerLight;
 
@@ -15,8 +15,8 @@ export function Header() {
                     <input
                         type="checkbox"
                         className={styles.checkbox}
-                        checked={theme === 'dark'} // Se o tema for 'dark', o checkbox ficará marcado
-                        onChange={toggleTheme} // Alterna o tema quando clicado
+                        checked={theme === 'dark'}
+                        onChange={toggleTheme}
                     />
                     <span className={styles.slider}></span>
                 </label>

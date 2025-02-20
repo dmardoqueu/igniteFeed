@@ -10,13 +10,13 @@
 }
 
 .headerDark {
-    background: var(--gray-300); /* Fundo claro */
-    color: var(--gray-800); /* Texto escuro */
+    background: var(--gray-300);
+    color: var(--gray-800);
 }
 
 .headerLight {
-    background: var(--gray-800); /* Fundo escuro */
-    color: var(--gray-100); /* Texto claro */
+    background: var(--gray-800);
+    color: var(--gray-100);
 }
 
 .header img {
@@ -29,8 +29,8 @@
 .toggle-switch {
     position: absolute;
     right: 1rem;
-    width: 54px;  /* Aumentei um pouco para compensar a borda */
-    height: 27px; /* Mantive proporcional */
+    width: 54px;
+    height: 27px;
     --light: #d8dbe0;
     --dark: #28292c;
     --link: rgb(27, 129, 112);
@@ -42,9 +42,9 @@
     width: 100%;
     height: 100%;
     background-color: var(--dark);
-    border-radius: 14px; /* Metade da altura */
+    border-radius: 14px;
     cursor: pointer;
-    padding: 2px; /* Adiciona espaçamento interno para evitar que o slider encoste */
+    padding: 2px;
     box-sizing: border-box;
 }
 
@@ -55,7 +55,7 @@
 
 .slider {
     position: absolute;
-    width: calc(100% - 4px); /* Reduzido para criar um espaçamento */
+    width: calc(100% - 4px);
     height: calc(100% - 4px);
     border-radius: 14px;
     transition: 0.3s;
@@ -69,8 +69,8 @@
     content: "";
     position: absolute;
     top: 50%;  
-    left: 4px; /* Ajustado para manter distância da borda */
-    width: 19px; /* Tamanho da bolinha */
+    left: 4px;
+    width: 19px;
     height: 19px;
     border-radius: 50%;
     background-color: var(--dark);
@@ -81,7 +81,7 @@
 
 
 .checkbox:checked ~ .slider::before {
-    transform: translate(24px, -50%); /* Ajustado para compensar o novo tamanho */
+    transform: translate(24px, -50%);
     background-color: var(--dark);
     box-shadow: none;
 }

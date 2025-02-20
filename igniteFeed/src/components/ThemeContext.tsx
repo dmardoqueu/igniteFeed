@@ -14,10 +14,9 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-    const [theme, setTheme] = useState<Theme>('dark'); // Definindo 'dark' como tema padrão
+    const [theme, setTheme] = useState<Theme>('dark');
 
     useEffect(() => {
-        // Aplicando a classe correspondente no body quando o tema mudar
         if (theme === 'dark') {
             document.body.classList.add('dark');
         } else {

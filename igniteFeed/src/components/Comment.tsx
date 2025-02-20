@@ -1,5 +1,5 @@
 import { ThumbsUp, Trash } from 'phosphor-react';
-import { useTheme } from '../components/ThemeContext'; // Importando o contexto de tema
+import { useTheme } from '../components/ThemeContext';
 import styles from './Comment.module.css';
 import { Avatar } from './Avatar';
 import { useState } from 'react';
@@ -11,7 +11,7 @@ interface CommentProps {
 
 export function Comment({ content, onDeleteComment }: CommentProps) {
     const [likeCount, setLikeCount] = useState(0);
-    const { theme } = useTheme(); // Pegando o tema atual
+    const { theme } = useTheme();
 
     function handleDeleteComment() {
         onDeleteComment(content);
@@ -23,7 +23,7 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
 
     return (
         <div className={`${styles.comment} ${theme === 'dark' ? styles.light : styles.dark}`}>
-            <Avatar hasBorder={false} src="https://github.com/davidmello04.png" alt=""/>
+            <Avatar hasBorder={false} src="https://github.com/davidmello04.png" alt="" />
 
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
@@ -42,10 +42,10 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
                 </div>
 
                 <footer>
-                    <button 
-                    className={styles.applaud}
-                    title='Aplaudir' 
-                    onClick={handleLikeComment}>
+                    <button
+                        className={styles.applaud}
+                        title='Aplaudir'
+                        onClick={handleLikeComment}>
                         <ThumbsUp />
                         Aplaudir <span>{likeCount}</span>
                     </button>

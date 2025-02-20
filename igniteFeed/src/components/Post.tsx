@@ -28,7 +28,7 @@ interface Content {
 export function Post({ author, publishedAt, content }: PostProps) {
     const [comments, setComments] = useState(['Post muito bacana!']);
     const [newCommentText, setNewCommentText] = useState('');
-    const { theme } = useTheme();  // Usando o contexto para obter o tema atual
+    const { theme } = useTheme();
 
     const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR,
@@ -65,7 +65,7 @@ export function Post({ author, publishedAt, content }: PostProps) {
     const isNewCommentEmpty = newCommentText.length === 0;
 
     return (
-        <article className={`${styles.post} ${theme === 'dark' ? styles.light : styles.dark }`}> {/* Alterando a classe do tema */}
+        <article className={`${styles.post} ${theme === 'dark' ? styles.light : styles.dark}`}>
             <header>
                 <div className={styles.author}>
                     <Avatar src={author.avatarUrl} />

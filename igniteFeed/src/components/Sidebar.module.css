@@ -1,16 +1,11 @@
-/* Estilos para o tema claro */
 .sidebarLight {
     background: var(--gray-300);
-    /* Fundo claro */
     color: var(--gray-700);
-    /* Texto escuro */
 }
 
 .sidebarDark {
     background: var(--gray-800);
-    /* Fundo escuro */
     color: var(--gray-100);
-    /* Texto claro */
 }
 
 .sidebarLight .profile strong {

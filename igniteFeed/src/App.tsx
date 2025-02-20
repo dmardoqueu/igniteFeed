@@ -5,7 +5,7 @@ import { Sidebar } from './components/Sidebar';
 import './global.css';
 import styles from './App.module.css';
 
-import { ThemeProvider } from './components/ThemeContext'; // Importando o ThemeProvider
+import { ThemeProvider } from './components/ThemeContext';
 
 interface Author {
   avatarUrl: string;
@@ -64,7 +64,7 @@ export function App() {
         <Sidebar />
         <main>
           {posts.map(post => (
-            <Post 
+            <Post
               key={post.id}
               author={post.author}
               content={post.content}
@@ -77,7 +77,6 @@ export function App() {
   );
 }
 
-// Envolvendo o App com o ThemeProvider para fornecer o contexto de tema
 export default function Wrapper() {
   return (
     <ThemeProvider>
