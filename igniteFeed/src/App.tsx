@@ -2,8 +2,10 @@ import { Header } from './components/Header';
 import { Post } from './components/Post';
 import { Sidebar } from './components/Sidebar';
 
-import "./global.css";
+import './global.css';
 import styles from './App.module.css';
+
+import { ThemeProvider } from './components/ThemeContext'; // Importando o ThemeProvider
 
 interface Author {
   avatarUrl: string;
@@ -52,13 +54,12 @@ const posts: PostProps[] = [
     ],
     publishedAt: new Date('2025-02-04 13:00:00')
   }
-]
+];
 
 export function App() {
   return (
     <div>
       <Header />
-      
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
@@ -73,5 +74,14 @@ export function App() {
         </main>
       </div>
     </div>
-  )
+  );
+}
+
+// Envolvendo o App com o ThemeProvider para fornecer o contexto de tema
+export default function Wrapper() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
 }

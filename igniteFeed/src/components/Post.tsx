@@ -6,6 +6,7 @@ import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 
 import styles from './Post.module.css';
+import { useTheme } from '../components/ThemeContext';  // Importando o contexto de tema
 
 interface Author {
     avatarUrl: string;
@@ -25,11 +26,9 @@ interface Content {
 }
 
 export function Post({ author, publishedAt, content }: PostProps) {
-    const [comments, setComments] = useState([
-        'Post muito bacana!'
-    ]);
-
-    const [newCommentText, setNewCommentText] = useState('')
+    const [comments, setComments] = useState(['Post muito bacana!']);
+    const [newCommentText, setNewCommentText] = useState('');
+    const { theme } = useTheme();  // Usando o contexto para obter o tema atual
 
     const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR,
@@ -41,33 +40,32 @@ export function Post({ author, publishedAt, content }: PostProps) {
     });
 
     function handleCreateNewComment(event: FormEvent) {
-        event.preventDefault()
+        event.preventDefault();
 
         setComments([...comments, newCommentText]);
-        setNewCommentText('')
+        setNewCommentText('');
     }
 
     function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
-        event.target.setCustomValidity('Este campo é obrigatório!')
+        event.target.setCustomValidity('Este campo é obrigatório!');
     }
 
     function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
-        event.target.setCustomValidity('')
-        setNewCommentText(event.target.value)
+        event.target.setCustomValidity('');
+        setNewCommentText(event.target.value);
     }
 
     function deleteComment(commentToDelete: string) {
         const commentsWithoutDeletedOne = comments.filter(comment => {
-            return comment !== commentToDelete
-        })
-        setComments(commentsWithoutDeletedOne)
+            return comment !== commentToDelete;
+        });
+        setComments(commentsWithoutDeletedOne);
     }
 
-    const isNewCommentEmpty = newCommentText.length === 0
-
+    const isNewCommentEmpty = newCommentText.length === 0;
 
     return (
-        <article className={styles.post}>
+        <article className={`${styles.post} ${theme === 'dark' ? styles.light : styles.dark }`}> {/* Alterando a classe do tema */}
             <header>
                 <div className={styles.author}>
                     <Avatar src={author.avatarUrl} />
@@ -119,9 +117,9 @@ export function Post({ author, publishedAt, content }: PostProps) {
                             content={comment}
                             onDeleteComment={deleteComment}
                         />
-                    )
+                    );
                 })}
             </div>
         </article>
-    )
+    );
 }

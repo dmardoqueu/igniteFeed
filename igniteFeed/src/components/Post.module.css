@@ -1,7 +1,41 @@
+/* Post.module.css */
+
+/* Estilo comum */
 .post {
-    background: var(--gray-800);
     border-radius: 8px;
     padding: 2.5rem;
+    background: var(--gray-800); /* Cor do tema escuro */
+}
+
+/* Estilo para tema claro */
+.post.light {
+    background: var(--gray-300); /* Cor do fundo no tema claro */
+    color: var(--gray-900);
+}
+
+.post.light .authorInfo strong {
+    color: var(--gray-700); /* Ou qualquer outra cor que você queira usar no tema claro */
+}
+
+.post.light .commentForm > strong {
+    line-height: 1.6;
+    color: var(--gray-700);
+}
+
+.post.light .commentForm > textarea {
+    width: 100%;
+    background: var(--gray-200);
+    border: 0;
+    resize: none;
+    height: 6rem;
+    padding: 1rem;
+    border-radius: 8px;
+    line-height: 1.4;
+    margin-top: 1rem;
+}
+
+.post.light .commentForm > textarea::placeholder {
+    color: var(--gray-400);
 }
 
 .post + .post {
@@ -38,7 +72,6 @@
     align-items: center;
     gap: 1rem;
 }
-
 
 .authorInfo strong {
     display: block;
@@ -97,9 +130,7 @@
     color: var(--white);
     font-weight: bold;
     cursor: pointer;
-
     transition: background-color 0.3s;
-
 }
 
 .commentForm button[type=submit]:not(:disabled):hover {
@@ -110,6 +141,7 @@
     opacity: 0.7;
     cursor: not-allowed;
 }
+
 
 .commentList {
     margin-top: 2rem;
